@@ -1,7 +1,6 @@
 import time
-
-from MGC_Project.cluster_data_ingestion.scraper_config import KingdomNames, DirectoryType, MibigQueryData
-from MGC_Project.cluster_data_ingestion.excel_write_config import IODataTypes, DirectoryData
+from cluster_data_ingestion.scraper_config import KingdomNames, DirectoryType, MibigQueryData
+from cluster_data_ingestion.excel_write_config import IODataTypes, DirectoryData
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -9,7 +8,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-from MGC_Project.cluster_data_ingestion.excel_writer import ExcelWriter
+from cluster_data_ingestion.excel_writer import ExcelWriter
 
 
 class DataScraper:

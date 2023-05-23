@@ -2,7 +2,7 @@ import os
 
 import pandas as pd
 from Bio import SeqIO
-from MGC_Project.cluster_data_ingestion.excel_write_config import IODataTypes, DirectoryData, DataframeColumns
+from cluster_data_ingestion.excel_write_config import IODataTypes, DirectoryData, DataframeColumns
 
 
 class ExcelWriter:
