@@ -5,7 +5,7 @@ from Bio import SeqIO
 from cluster_data_ingestion.excel_write_config import IODataTypes, DirectoryData, DataframeColumns
 
 
-class ExcelWriter:
+class ClusterExcelWriter:
 
     def __init__(self, bgc_list: list, scraper_dict: dict, output_directory: str = DirectoryData.GENERAL_DATA_DIR,
                  excel_name: str = DirectoryData.CLUSTER_EXCEL, excel_columns: list = DataframeColumns.CLUSTER,

@@ -8,7 +8,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-from cluster_data_ingestion.excel_writer import ExcelWriter
+from cluster_data_ingestion.excel_writer import ClusterExcelWriter
 
 
 class DataScraper:
@@ -111,9 +111,9 @@ class DataScraper:
 
 
 if __name__ == "__main__":
-    mibig_scraper = DataScraper(kingdom=KingdomNames.PLANT, export_location=DirectoryType.LOCAL,
+    mibig_scraper = DataScraper(kingdom=KingdomNames.FUNGI, export_location=DirectoryType.LOCAL,
                                 get_gene_data=False)
     bgc_list = mibig_scraper.get_bgc_list()
     scraper_dict = mibig_scraper.get_scraper_dict()
-    ExcelWriter(bgc_list=bgc_list, scraper_dict=scraper_dict).handle_data_from_directory(file_type=IODataTypes.GENBANK,
-                                                              directory=DirectoryData.GENBANK_3_1)
+    ClusterExcelWriter(bgc_list=bgc_list, scraper_dict=scraper_dict).handle_data_from_directory(file_type=IODataTypes.GENBANK,
+                                                                                                directory=DirectoryData.GENBANK_3_1)

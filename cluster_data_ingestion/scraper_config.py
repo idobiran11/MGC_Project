@@ -21,6 +21,7 @@ class MibigBGCs:
 @dataclass(frozen=True)
 class KingdomNames:
     PLANT = "Viridiplantae"
+    FUNGI = "Fungi"
 
 @dataclass(frozen=True)
 class DirectoryType:

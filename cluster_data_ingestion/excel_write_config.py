@@ -7,6 +7,8 @@ class DirectoryData:
     GENBANK_3_1: str = "cluster_data_ingestion/data/mibig/genbank/mibig_gbk_3.1"
     GENERAL_DATA_DIR = "general_data"
     CLUSTER_EXCEL = "mgc_clusters.xlsx"
+    PLANT_CLUSTER_EXCEL = "mgc_plant_clusters.xlsx"
+    GENE_DATA_DIR = "gene_data"
 
 
 @dataclass(frozen=True)
