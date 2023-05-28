@@ -3,6 +3,7 @@ import pandas as pd
 from Bio import SeqIO
 from excel_write_config import DirectoryData, IODataTypes
 
+
 class GeneFilesWriter:
 
     def __init__(self, directory_data: DirectoryData, kingdom: str = "plants"):
