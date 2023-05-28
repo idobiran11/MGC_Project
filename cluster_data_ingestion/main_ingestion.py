@@ -15,7 +15,7 @@ def handler(kingdom: str):
                            excel_name=DirectoryData.PLANT_CLUSTER_EXCEL).handle_data_from_directory(
             file_type=IODataTypes.GENBANK,
             directory=DirectoryData.GENBANK_3_1)
-        GeneFilesWriter(kingdom="plants")
+        GeneFilesWriter(kingdom="plants").write_gene_files()
 
     elif kingdom == "fungi":
         mibig_scraper = DataScraper(kingdom=KingdomNames.FUNGI, export_location=DirectoryType.LOCAL,
@@ -26,10 +26,10 @@ def handler(kingdom: str):
                            excel_name=DirectoryData.FUNGI_CLUSTER_EXCEL).handle_data_from_directory(
             file_type=IODataTypes.GENBANK,
             directory=DirectoryData.GENBANK_3_1)
-        GeneFilesWriter(kingdom="fungi")
+        GeneFilesWriter(kingdom="fungi").write_gene_files()
 
     print("Successfully created Cluster and Gene files")
 
 
 if __name__ == "__main__":
-    handler("plants")
+    handler("fungi")

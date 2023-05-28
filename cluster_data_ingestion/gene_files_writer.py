@@ -10,13 +10,14 @@ class GeneFilesWriter:
     def __init__(self, directory_data: Type[DirectoryData]=DirectoryData, kingdom: str = "plants"):
         if kingdom == "plants":
             self.cluster_path = f'{directory_data.GENERAL_DATA_DIR}/{directory_data.PLANT_CLUSTER_EXCEL}'
+            self.write_directory = f'{directory_data.GENERAL_DATA_DIR}/{directory_data.PLANT_GENE_DATA_DIR}'
         elif kingdom == "fungi":
             self.cluster_path = f'{directory_data.GENERAL_DATA_DIR}/{directory_data.FUNGI_CLUSTER_EXCEL}'
+            self.write_directory = f'{directory_data.GENERAL_DATA_DIR}/{directory_data.FUNGI_GENE_DATA_DIR}'
         else:
             print("Non Existent kingdom kwarg, write 'plants' or 'fungi'")
             raise Exception
         self.genbank_files = directory_data.GENBANK_3_1
-        self.write_directory = f'{directory_data.GENERAL_DATA_DIR}/{directory_data.GENE_DATA_DIR}'
         self._check_create_dir()
 
     def _check_create_dir(self):

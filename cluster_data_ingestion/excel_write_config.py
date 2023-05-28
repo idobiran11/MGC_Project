@@ -10,6 +10,8 @@ class DirectoryData:
     PLANT_CLUSTER_EXCEL = "mgc_plant_clusters.xlsx"
     FUNGI_CLUSTER_EXCEL = "mgc_fungi_clusters.xlsx"
     GENE_DATA_DIR = "gene_data"
+    PLANT_GENE_DATA_DIR = "plant_gene_data"
+    FUNGI_GENE_DATA_DIR = "fungi_gene_data"
 
 
 @dataclass(frozen=True)

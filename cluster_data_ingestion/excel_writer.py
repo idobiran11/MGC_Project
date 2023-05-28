@@ -64,7 +64,7 @@ class ClusterExcelWriter:
                     continue
                 path = f"{directory}/{file_name}"
                 for seq_record in SeqIO.parse(path, file_type):
-                    if self.excel_name == DirectoryData.CLUSTER_EXCEL:
+                    if self.excel_name:
                         self._write_to_cluster_df(seq_record)
                     if self.write_gene_data:
                         None
