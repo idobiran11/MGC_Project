@@ -28,6 +28,8 @@ def handler(kingdom: str):
             directory=DirectoryData.GENBANK_3_1)
         GeneFilesWriter(kingdom="fungi")
 
+    print("Successfully created Cluster and Gene files")
+
 
 if __name__ == "__main__":
     handler("plants")
