@@ -2,11 +2,12 @@ import os
 import pandas as pd
 from Bio import SeqIO
 from excel_write_config import DirectoryData, IODataTypes
+from typing import Type
 
 
 class GeneFilesWriter:
 
-    def __init__(self, directory_data: DirectoryData, kingdom: str = "plants"):
+    def __init__(self, directory_data: Type[DirectoryData]=DirectoryData, kingdom: str = "plants"):
         if kingdom == "plants":
             self.cluster_path = f'{directory_data.GENERAL_DATA_DIR}/{directory_data.PLANT_CLUSTER_EXCEL}'
         elif kingdom == "fungi":

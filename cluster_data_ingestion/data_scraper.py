@@ -9,6 +9,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from cluster_data_ingestion.excel_writer import ClusterExcelWriter
+from cluster_data_ingestion.gene_files_writer import GeneFilesWriter
 
 
 class DataScraper:
@@ -110,10 +111,11 @@ class DataScraper:
         return self.output_dict
 
 
-if __name__ == "__main__":
-    mibig_scraper = DataScraper(kingdom=KingdomNames.FUNGI, export_location=DirectoryType.LOCAL,
-                                get_gene_data=False)
-    bgc_list = mibig_scraper.get_bgc_list()
-    scraper_dict = mibig_scraper.get_scraper_dict()
-    ClusterExcelWriter(bgc_list=bgc_list, scraper_dict=scraper_dict).handle_data_from_directory(file_type=IODataTypes.GENBANK,
-                                                                                                directory=DirectoryData.GENBANK_3_1)
+# if __name__ == "__main__":
+#     mibig_scraper = DataScraper(kingdom=KingdomNames.PLANT, export_location=DirectoryType.LOCAL,
+#                                 get_gene_data=False)
+#     bgc_list = mibig_scraper.get_bgc_list()
+#     scraper_dict = mibig_scraper.get_scraper_dict()
+#     ClusterExcelWriter(bgc_list=bgc_list, scraper_dict=scraper_dict, excel_name=DirectoryData.PLANT_CLUSTER_EXCEL).handle_data_from_directory(file_type=IODataTypes.GENBANK,
+#                                                                                                 directory=DirectoryData.GENBANK_3_1)
+#     GeneFilesWriter(kingdom="plants")
