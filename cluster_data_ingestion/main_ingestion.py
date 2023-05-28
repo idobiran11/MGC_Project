@@ -13,8 +13,7 @@ def handler(kingdom: str):
         scraper_dict = mibig_scraper.get_scraper_dict()
         ClusterExcelWriter(bgc_list=bgc_list, scraper_dict=scraper_dict,
                            excel_name=DirectoryData.PLANT_CLUSTER_EXCEL).handle_data_from_directory(
-            file_type=IODataTypes.GENBANK,
-            directory=DirectoryData.GENBANK_3_1)
+            file_type=IODataTypes.GENBANK)
         GeneFilesWriter(kingdom="plants").write_gene_files()
 
     elif kingdom == "fungi":
@@ -24,8 +23,7 @@ def handler(kingdom: str):
         scraper_dict = mibig_scraper.get_scraper_dict()
         ClusterExcelWriter(bgc_list=bgc_list, scraper_dict=scraper_dict,
                            excel_name=DirectoryData.FUNGI_CLUSTER_EXCEL).handle_data_from_directory(
-            file_type=IODataTypes.GENBANK,
-            directory=DirectoryData.GENBANK_3_1)
+            file_type=IODataTypes.GENBANK)
         GeneFilesWriter(kingdom="fungi").write_gene_files()
 
     print("Successfully created Cluster and Gene files")
