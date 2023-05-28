@@ -5,8 +5,14 @@ from excel_write_config import DirectoryData, IODataTypes
 
 class GeneFilesWriter:
 
-    def __init__(self, directory_data: DirectoryData):
-        self.cluster_path = f'{directory_data.GENERAL_DATA_DIR}/{directory_data.PLANT_CLUSTER_EXCEL}'
+    def __init__(self, directory_data: DirectoryData, kingdom: str = "plants"):
+        if kingdom == "plants":
+            self.cluster_path = f'{directory_data.GENERAL_DATA_DIR}/{directory_data.PLANT_CLUSTER_EXCEL}'
+        elif kingdom == "fungi":
+            self.cluster_path = f'{directory_data.GENERAL_DATA_DIR}/{directory_data.FUNGI_CLUSTER_EXCEL}'
+        else:
+            print("Non Existent kingdom kwarg, write 'plants' or 'fungi'")
+            raise Exception
         self.genbank_files = directory_data.GENBANK_3_1
         self.write_directory = f'{directory_data.GENERAL_DATA_DIR}/{directory_data.GENE_DATA_DIR}'
         self._check_create_dir()

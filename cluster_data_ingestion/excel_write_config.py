@@ -8,6 +8,7 @@ class DirectoryData:
     GENERAL_DATA_DIR = "general_data"
     CLUSTER_EXCEL = "mgc_clusters.xlsx"
     PLANT_CLUSTER_EXCEL = "mgc_plant_clusters.xlsx"
+    FUNGI_CLUSTER_EXCEL = "mgc_fungi_clusters.xlsx"
     GENE_DATA_DIR = "gene_data"
 
 
