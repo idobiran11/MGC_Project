@@ -32,4 +32,4 @@ def handler(kingdom: str):
 
 
 if __name__ == "__main__":
-    handler("fungi")
+    handler("plants")

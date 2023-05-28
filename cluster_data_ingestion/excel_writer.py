@@ -42,6 +42,7 @@ class ClusterExcelWriter:
         directory = self.output_directory
         suffix = self.excel_name
         filepath = os.path.join(directory, suffix)
+        self.df.reset_index(drop=True, inplace=True)
         self.df.to_excel(filepath, index=True)
 
     @staticmethod
@@ -58,14 +59,19 @@ class ClusterExcelWriter:
         dir_list = os.listdir(directory)
 
         if file_type == IODataTypes.GENBANK:
-            for file_name in dir_list:
-                cluster, suffix = file_name.split('.')
-                if not cluster in self.bgc_list:
-                    continue
+            i = 1
+            for bgc in self.bgc_list:
+                file_name = f'{bgc}.gbk'
                 path = f"{directory}/{file_name}"
-                for seq_record in SeqIO.parse(path, file_type):
-                    if self.excel_name:
-                        self._write_to_cluster_df(seq_record)
+                try:
+                    for seq_record in SeqIO.parse(path, file_type):
+                        if self.excel_name:
+                                self._write_to_cluster_df(seq_record)
+                                print(f'{i} clusters added: {bgc}')
+                                i += 1
+                except:
+                    print(f'{file_name} not in data')
+
                     if self.write_gene_data:
                         None
             self._write_output_excel()
