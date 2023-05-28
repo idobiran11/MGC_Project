@@ -3,6 +3,7 @@ import os
 import pandas as pd
 from Bio import SeqIO
 from cluster_data_ingestion.excel_write_config import IODataTypes, DirectoryData
+import json
 
 
 class ClusterExcelWriter:
@@ -21,20 +22,32 @@ class ClusterExcelWriter:
         if not os.path.exists(self.output_directory):
             os.makedirs(self.output_directory)
 
+    @staticmethod
+    def _extract_publications_from_json(json_file):
+        json_cluster = json_file.get('cluster')
+        if json_cluster:
+            publications = json_cluster.get('publications')
+            return publications
+        return None
+
     def _write_to_cluster_df(self, seq_record, mibig_version, json_path):
+        with open(json_path, 'r') as file:
+            json_record = json.load(file)
         cluster_scraped_dict = self.scraper_dict[seq_record.id]
         value_dict = {'mibig_id': seq_record.id,
                       'cluster_doi': 'None',
                       'cluster_name': 'None',
                       'organism': cluster_scraped_dict['organism'],
-                      'cluster_start': int(seq_record.annotations['structured_comment']['antiSMASH-Data']['Orig. start']),
+                      'cluster_start': int(
+                          seq_record.annotations['structured_comment']['antiSMASH-Data']['Orig. start']),
                       'cluster_end': int(seq_record.annotations['structured_comment']['antiSMASH-Data']['Orig. end']),
                       'cluster_genbank_link': 'None',
                       'num_of_genes': self._find_num_of_genes(seq_record),
                       'bionsythetic_class': cluster_scraped_dict['bionsythetic_class'],
                       'description': seq_record.description,
                       'main_product': cluster_scraped_dict['main_product'],
-                      'mibig_version': mibig_version}
+                      'mibig_version': mibig_version,
+                      'publications': self._extract_publications_from_json(json_record)}
         # 'organism': seq_record.annotations['organism']
         df2 = pd.Series(value_dict).to_frame().transpose()
         self.df = pd.concat([self.df, df2])
@@ -67,7 +80,6 @@ class ClusterExcelWriter:
         print(f"No Json File found for {bgc_name}, returning None")
         return None
 
-
     def handle_data_from_directory(self, file_type: str):
         directories = [DirectoryData.GENBANK_3_1, DirectoryData.GENBANK_3_0, DirectoryData.GENBANK_2_0]
         if file_type == IODataTypes.GENBANK:
@@ -88,8 +100,6 @@ class ClusterExcelWriter:
                         i += 1
                     break
             self._write_output_excel()
-
-
 
         # elif file_type == IODataTypes.JSON:
         #     for file_name in dir_list:
