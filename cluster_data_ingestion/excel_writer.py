@@ -17,6 +17,10 @@ class ClusterExcelWriter:
         self.write_gene_data = write_gene_data
         self.scraper_dict = scraper_dict
 
+    def _check_create_dir(self):
+        if not os.path.exists(self.output_directory):
+            os.makedirs(self.output_directory)
+
     def _write_to_cluster_df(self, seq_record):
         cluster_scraped_dict = self.scraper_dict[seq_record.id]
         value_dict = {'mibig_id': seq_record.id,
