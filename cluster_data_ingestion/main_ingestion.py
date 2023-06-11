@@ -1,8 +1,11 @@
 from data_scraper import DataScraper
 from excel_writer import ClusterExcelWriter
-from gene_files_writer import GeneFilesWriter
+from gene_files_writer import GeneCompoundFilesWriter
 from scraper_config import DirectoryType, KingdomNames
 from excel_write_config import IODataTypes, DirectoryData
+import logging
+
+logging.basicConfig(format=' %(asctime)s | %(levelname)s | %(message)s', level=logging.INFO)
 
 
 def handler(kingdom: str):
@@ -14,7 +17,7 @@ def handler(kingdom: str):
         ClusterExcelWriter(bgc_list=bgc_list, scraper_dict=scraper_dict,
                            excel_name=DirectoryData.PLANT_CLUSTER_EXCEL).handle_data_from_directory(
             file_type=IODataTypes.GENBANK)
-        GeneFilesWriter(kingdom="plants").write_gene_files()
+        GeneCompoundFilesWriter(kingdom="plants").write_gene_and_compounds_files()
 
     elif kingdom == "fungi":
         mibig_scraper = DataScraper(kingdom=KingdomNames.FUNGI, export_location=DirectoryType.LOCAL,
@@ -24,9 +27,9 @@ def handler(kingdom: str):
         ClusterExcelWriter(bgc_list=bgc_list, scraper_dict=scraper_dict,
                            excel_name=DirectoryData.FUNGI_CLUSTER_EXCEL).handle_data_from_directory(
             file_type=IODataTypes.GENBANK)
-        GeneFilesWriter(kingdom="fungi").write_gene_files()
+        GeneCompoundFilesWriter(kingdom="fungi").write_gene_and_compounds_files()
 
-    print("Successfully created Cluster and Gene files")
+    logging.info("Successfully created Cluster and Gene files")
 
 
 if __name__ == "__main__":

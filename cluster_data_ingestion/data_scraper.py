@@ -9,7 +9,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from cluster_data_ingestion.excel_writer import ClusterExcelWriter
-from cluster_data_ingestion.gene_files_writer import GeneFilesWriter
+from cluster_data_ingestion.gene_files_writer import GeneCompoundFilesWriter
 
 
 class DataScraper:
@@ -100,9 +100,16 @@ class DataScraper:
             split_row = row.split('\n')
             cluster_id = split_row[0].split(' ')[0]
             self.output_dict[cluster_id] = dict()
-            self.output_dict[cluster_id]['main_product'] = split_row[0].split(' ')[1]
+            self.output_dict[cluster_id]['main_product'] = self._get_clean_main_product_list(split_row[0].split(' ')[1:])
             self.output_dict[cluster_id]['bionsythetic_class'] = split_row[1]
             self.output_dict[cluster_id]['organism'] = split_row[2]
+
+    @staticmethod
+    def _get_clean_main_product_list(dirty_list):
+        for i in range(len(dirty_list)):
+            if dirty_list[i][-1] == ",":
+                dirty_list[i] = dirty_list[i][:-1]
+        return dirty_list
 
     def get_bgc_list(self):
         return self.bgc_words
