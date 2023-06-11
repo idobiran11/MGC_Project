@@ -57,7 +57,7 @@ class ClusterExcelWriter:
             end = int(seq_record.annotations['structured_comment']['antiSMASH-Data']['Orig. end'])
             notes.append('end calculated from gbk')
         value_dict = {'mibig_id': seq_record.id,
-                      'accession': accession,
+                      'ncbi_accession': accession,
                       'organism': cluster_scraped_dict['organism'],
                       'cluster_start': start,
                       'cluster_end': end,
