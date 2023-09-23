@@ -1,0 +1,52 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Submitted"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Other"
+        ],
+        "compounds": [
+            {
+                "chem_synonyms": [
+                    "man"
+                ],
+                "compound": "group I methanobactin",
+                "evidence": [
+                    "NMR",
+                    "Mass spectrometry"
+                ],
+                "mass_spec_ion_type": "Other",
+                "mol_mass": 1335.233
+            }
+        ],
+        "loci": {
+            "accession": "NZ_KB900627.1",
+            "completeness": "complete",
+            "end_coord": 375954,
+            "evidence": [
+                "Gene expression correlated with compound production"
+            ],
+            "start_coord": 367500
+        },
+        "mibig_accession": "BGC0002132",
+        "minimal": false,
+        "ncbi_tax_id": "136993",
+        "organism_name": "Methylosinus sp. LW4",
+        "other": {
+            "subclass": "Aminocoumarin"
+        },
+        "publications": [
+            "pubmed:27527063"
+        ],
+        "status": "active"
+    }
+}

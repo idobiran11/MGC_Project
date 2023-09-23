@@ -1,0 +1,39 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Entry added"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "NRP",
+            "Polyketide"
+        ],
+        "compounds": [
+            {
+                "chem_struct": "CCCCCCCCCCCC1=C(C2=NC(C(NCC(NCC(NC(C(C(O)=O)O)C(NCC(NC(CO)C(C(O)=O)O)=O)=O)=O)=O)=O)CO2)C(O)=CC=C1",
+                "compound": "cyanochelin A"
+            }
+        ],
+        "loci": {
+            "accession": "CP003549.1",
+            "completeness": "Unknown",
+            "end_coord": 7819129,
+            "start_coord": 7774831
+        },
+        "mibig_accession": "BGC0002411",
+        "minimal": true,
+        "ncbi_tax_id": "373994",
+        "organism_name": "Rivularia sp. PCC 7116",
+        "publications": [
+            "pubmed:34132591"
+        ],
+        "status": "active"
+    }
+}

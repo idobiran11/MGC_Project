@@ -1,0 +1,52 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Entry added"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Polyketide",
+            "NRP",
+            "Saccharide"
+        ],
+        "compounds": [
+            {
+                "compound": "miharamycin B"
+            },
+            {
+                "chem_struct": "C1[C@@H]([C@@]2([C@@H](C(O[C@H](C2O1)N3C=NC4=CN=C(N=C43)N)C(C(=O)O)NC(=O)C(CCCN(C(=N)N)O)N)O)O)O",
+                "compound": "miharamycin A",
+                "database_id": [
+                    "npatlas:NPA015271",
+                    "pubchem:101015779",
+                    "chemspider:74130293"
+                ]
+            }
+        ],
+        "loci": {
+            "accession": "MN850873.1",
+            "completeness": "Unknown",
+            "end_coord": 43827,
+            "evidence": [
+                "Heterologous expression"
+            ],
+            "start_coord": 1
+        },
+        "mibig_accession": "BGC0002479",
+        "minimal": true,
+        "ncbi_tax_id": "285483",
+        "organism_name": "Streptomyces miharaensis",
+        "publications": [
+            "pubmed:32167762",
+            "doi:10.1021/jacs.0c01778"
+        ],
+        "status": "active"
+    }
+}

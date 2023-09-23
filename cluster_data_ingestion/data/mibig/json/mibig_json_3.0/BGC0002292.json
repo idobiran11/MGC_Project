@@ -1,0 +1,47 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Entry added"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Other"
+        ],
+        "compounds": [
+            {
+                "chem_struct": "C([C@@H]1[C@H]([C@H]([C@@H](O1)C2=NNC(=C2O)C(=O)N)O)O)O",
+                "compound": "pyrazofurin",
+                "database_id": [
+                    "pubchem:135413551",
+                    "chembl:CHEMBL2105330",
+                    "chemspider:10570780"
+                ]
+            }
+        ],
+        "loci": {
+            "accession": "MN305320.1",
+            "completeness": "Unknown",
+            "end_coord": 90882,
+            "evidence": [
+                "Enzymatic assays"
+            ],
+            "start_coord": 67514
+        },
+        "mibig_accession": "BGC0002292",
+        "minimal": true,
+        "ncbi_tax_id": "67283",
+        "organism_name": "Streptomyces candidus",
+        "publications": [
+            "pubmed:31518483",
+            "doi:10.1002/anie.201910356"
+        ],
+        "status": "active"
+    }
+}

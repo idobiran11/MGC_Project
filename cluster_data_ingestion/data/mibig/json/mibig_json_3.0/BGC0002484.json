@@ -1,0 +1,38 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Entry added"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "NRP",
+            "Polyketide"
+        ],
+        "compounds": [
+            {
+                "compound": "scytocyclamide"
+            }
+        ],
+        "loci": {
+            "accession": "KQ976354.1",
+            "completeness": "Unknown",
+            "end_coord": 3812822,
+            "start_coord": 3716086
+        },
+        "mibig_accession": "BGC0002484",
+        "minimal": true,
+        "ncbi_tax_id": "128403",
+        "organism_name": "Scytonema hofmannii PCC 7110",
+        "publications": [
+            "pubmed:33042096"
+        ],
+        "status": "active"
+    }
+}

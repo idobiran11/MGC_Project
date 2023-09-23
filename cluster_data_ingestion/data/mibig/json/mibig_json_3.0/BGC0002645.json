@@ -1,0 +1,47 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Entry added",
+                "Updated bioactivity data"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Other"
+        ],
+        "compounds": [
+            {
+                "chem_acts": [
+                    "antibacterial"
+                ],
+                "compound": "fluopsin C"
+            }
+        ],
+        "loci": {
+            "accession": "AE004091.2",
+            "completeness": "Unknown",
+            "end_coord": 3936837,
+            "evidence": [
+                "Heterologous expression",
+                "Knock-out studies",
+                "Enzymatic assays"
+            ],
+            "start_coord": 3930743
+        },
+        "mibig_accession": "BGC0002645",
+        "minimal": true,
+        "ncbi_tax_id": "208964",
+        "organism_name": "Pseudomonas aeruginosa PAO1",
+        "publications": [
+            "pubmed:34793213",
+            "doi:10.1126/science.abj6749"
+        ],
+        "status": "active"
+    }
+}

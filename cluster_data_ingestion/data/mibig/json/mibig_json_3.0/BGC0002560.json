@@ -1,0 +1,44 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Entry added",
+                "Updated bioactivity data"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "RiPP"
+        ],
+        "compounds": [
+            {
+                "chem_acts": [
+                    "cytotoxic"
+                ],
+                "compound": "thiostreptamide S4"
+            }
+        ],
+        "loci": {
+            "accession": "LGKJ01000112.1",
+            "completeness": "Unknown",
+            "end_coord": 98680,
+            "evidence": [
+                "Heterologous expression"
+            ],
+            "start_coord": 86914
+        },
+        "mibig_accession": "BGC0002560",
+        "minimal": true,
+        "ncbi_tax_id": "1519471",
+        "organism_name": "Streptomyces sp. NRRL S-4",
+        "publications": [
+            "pubmed:34123341"
+        ],
+        "status": "active"
+    }
+}

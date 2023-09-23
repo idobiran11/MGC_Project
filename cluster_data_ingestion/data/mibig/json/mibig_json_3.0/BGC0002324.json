@@ -1,0 +1,113 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Entry added",
+                "Added NRP substrate specificities"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "NRP",
+            "Polyketide"
+        ],
+        "compounds": [
+            {
+                "compound": "myxochelin B"
+            },
+            {
+                "compound": "myxochelin N"
+            },
+            {
+                "compound": "myxochelin O"
+            },
+            {
+                "compound": "myxochelin P"
+            },
+            {
+                "compound": "myxochelin Q"
+            },
+            {
+                "chem_struct": "C1=CC(=C(C(=C1)O)O)C(=O)NCCCC[C@@H](CO)NC(=O)C2=C(C(=CC=C2)O)O",
+                "compound": "myxochelin A",
+                "database_id": [
+                    "npatlas:NPA002219"
+                ]
+            }
+        ],
+        "loci": {
+            "accession": "CP069338.1",
+            "completeness": "Unknown",
+            "end_coord": 8377243,
+            "start_coord": 8359747
+        },
+        "mibig_accession": "BGC0002324",
+        "minimal": false,
+        "ncbi_tax_id": "83451",
+        "nrp": {
+            "nrps_genes": [
+                {
+                    "gene_id": "QRK05499.1",
+                    "modules": [
+                        {
+                            "a_substr_spec": {
+                                "evidence": [
+                                    "Structure-based inference",
+                                    "Feeding study"
+                                ],
+                                "publications": [
+                                    "pubmed:34623817"
+                                ],
+                                "substrates": [
+                                    {
+                                        "name": "nicotinic acid",
+                                        "proteinogenic": false,
+                                        "structure": "C1=CC(=CN=C1)C(=O)O"
+                                    },
+                                    {
+                                        "name": "benzoic acid",
+                                        "proteinogenic": false,
+                                        "structure": "C1=CC=C(C=C1)C(=O)O"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "gene_id": "QRK05501.1",
+                    "modules": [
+                        {
+                            "a_substr_spec": {
+                                "evidence": [
+                                    "Structure-based inference"
+                                ],
+                                "publications": [
+                                    "pubmed:34623817"
+                                ],
+                                "substrates": [
+                                    {
+                                        "name": "lysine",
+                                        "proteinogenic": true,
+                                        "structure": "C(CCN)C[C@@H](C(=O)O)N"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "organism_name": "Archangium violaceum",
+        "publications": [
+            "pubmed:34623817",
+            "doi:10.1021/acs.jnatprod.1c00524"
+        ],
+        "status": "active"
+    }
+}
