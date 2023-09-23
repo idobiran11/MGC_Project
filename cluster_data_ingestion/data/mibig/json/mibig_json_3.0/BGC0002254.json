@@ -1,0 +1,50 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Entry added"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Polyketide"
+        ],
+        "compounds": [
+            {
+                "chem_struct": "CC1(C=CC2=C(O1)C=CC3=C2NC4=C3[C@@H]([C@]56[C@H](C4(C)C)C[C@@]7(CCCN7C5=O)C(=O)N6)OC)C",
+                "compound": "notoamide F",
+                "database_id": [
+                    "npatlas:NPA009414",
+                    "pubchem:25180710"
+                ]
+            },
+            {
+                "chem_struct": "C[C@@H]1CC2=CC3=CC(=CC(=C3C(=C2C(=O)O1)O)O)OC",
+                "compound": "(+)-semivioxanthin",
+                "database_id": [
+                    "pubchem:194344"
+                ]
+            }
+        ],
+        "loci": {
+            "accession": "MT457561.1",
+            "completeness": "Unknown",
+            "end_coord": 46989,
+            "start_coord": 1
+        },
+        "mibig_accession": "BGC0002254",
+        "minimal": true,
+        "ncbi_tax_id": "2741095",
+        "organism_name": "Aspergillus sp. FM242",
+        "publications": [
+            "pubmed:32433885",
+            "doi:10.1021/acs.orglett.0c01411"
+        ],
+        "status": "active"
+    }
+}

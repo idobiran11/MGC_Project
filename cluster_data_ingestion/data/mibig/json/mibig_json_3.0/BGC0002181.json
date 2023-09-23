@@ -1,0 +1,41 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Entry added"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Terpene"
+        ],
+        "compounds": [
+            {
+                "chem_struct": "C[C@@H]1CCC23CCC(=O)[C@H]2C1([C@@H](C[C@@]([C@H]([C@@H]3C)O)(C)C=C)OC(=O)CO)C",
+                "compound": "pleuromutilin",
+                "database_id": [
+                    "pubchem:46782767"
+                ]
+            }
+        ],
+        "loci": {
+            "accession": "LC314149.1",
+            "completeness": "Unknown"
+        },
+        "mibig_accession": "BGC0002181",
+        "minimal": true,
+        "ncbi_tax_id": "693819",
+        "organism_name": "Rhodocybe pseudopiperita",
+        "publications": [
+            "pubmed:27143514",
+            "pubmed:28924980",
+            "pubmed:29184068"
+        ],
+        "status": "active"
+    }
+}

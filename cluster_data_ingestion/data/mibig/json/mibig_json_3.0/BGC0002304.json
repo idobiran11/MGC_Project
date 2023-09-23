@@ -1,0 +1,75 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Entry added",
+                "Updated bioactivity data",
+                "Added NRP substrate specificities"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Polyketide",
+            "NRP"
+        ],
+        "compounds": [
+            {
+                "chem_acts": [
+                    "antifungal"
+                ],
+                "chem_struct": "OC([C@@H]1C=C[C@]2([H])CCCC[C@]2([H])[C@H]1/C(O)=C3C([C@]([H])([C@@H](C)CC)N(C)C\\3=O)=O)=O",
+                "compound": "varicidin A"
+            }
+        ],
+        "loci": {
+            "accession": "MK376933.1",
+            "completeness": "Unknown",
+            "end_coord": 25713,
+            "evidence": [
+                "Heterologous expression",
+                "Enzymatic assays"
+            ],
+            "start_coord": 1
+        },
+        "mibig_accession": "BGC0002304",
+        "minimal": false,
+        "ncbi_tax_id": "28576",
+        "nrp": {
+            "nrps_genes": [
+                {
+                    "gene_id": "AZZ09613.1",
+                    "modules": [
+                        {
+                            "a_substr_spec": {
+                                "evidence": [
+                                    "Structure-based inference"
+                                ],
+                                "publications": [
+                                    "pubmed:30609896"
+                                ],
+                                "substrates": [
+                                    {
+                                        "name": "isoleucine",
+                                        "proteinogenic": true,
+                                        "structure": "CC[C@H](C)[C@@H](C(=O)O)N"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "organism_name": "Talaromyces variabilis",
+        "publications": [
+            "pubmed:30609896",
+            "doi:10.1021/jacs.8b12010"
+        ],
+        "status": "active"
+    }
+}

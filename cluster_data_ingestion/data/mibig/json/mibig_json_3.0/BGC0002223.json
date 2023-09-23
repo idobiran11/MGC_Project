@@ -1,0 +1,36 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Entry added"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Polyketide"
+        ],
+        "compounds": [
+            {
+                "chem_struct": "O=C(OC1=O)C2=C1C(CCCCC)(O)CC(C(OC3=O)=O)=C3C(CCCC)C2",
+                "compound": "scytalidin"
+            }
+        ],
+        "loci": {
+            "accession": "MT724050.1",
+            "completeness": "Unknown"
+        },
+        "mibig_accession": "BGC0002223",
+        "minimal": true,
+        "ncbi_tax_id": "1525810",
+        "organism_name": "Scytalidium album",
+        "publications": [
+            "pubmed:34094403"
+        ],
+        "status": "active"
+    }
+}

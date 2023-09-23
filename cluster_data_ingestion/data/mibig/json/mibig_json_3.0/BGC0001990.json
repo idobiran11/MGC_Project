@@ -1,0 +1,67 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Submitted"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "2.0"
+        },
+        {
+            "comments": [
+                "Fetch compound properties from PubChem",
+                "Cleaned up synonym list"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Other"
+        ],
+        "compounds": [
+            {
+                "chem_struct": "[C-]#[N+]/C(=C\\C1=CC=C(C=C1)O)/C(=C/C2=CC=C(C=C2)O)/[N+]#[C-]",
+                "chem_synonyms": [
+                    "Xantocillin",
+                    "Xanthocillin X",
+                    "Ophthocillin",
+                    "Xanthocillinum",
+                    "Brevicid",
+                    "Brevicide",
+                    "Trianthil",
+                    "Xantyrid",
+                    "Brevicide-X",
+                    "Xantocilina",
+                    "Xantocillinum",
+                    "Xantocilline"
+                ],
+                "compound": "xanthocillin",
+                "database_id": [
+                    "pubchem:5378293"
+                ],
+                "mol_mass": 288.089878,
+                "molecular_formula": "C18H12N2O2"
+            }
+        ],
+        "loci": {
+            "accession": "NC_007198.1",
+            "completeness": "Unknown",
+            "end_coord": 701000,
+            "start_coord": 687200
+        },
+        "mibig_accession": "BGC0001990",
+        "minimal": true,
+        "ncbi_tax_id": "330879",
+        "organism_name": "Aspergillus fumigatus Af293",
+        "publications": [
+            "pubmed:29844112"
+        ],
+        "status": "active"
+    }
+}

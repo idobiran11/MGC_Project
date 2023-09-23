@@ -1,0 +1,57 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Submitted"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "2.0"
+        },
+        {
+            "comments": [
+                "Cleaned up synonym list",
+                "Fetch compound properties from PubChem",
+                "Fixed DOIs",
+                "Updated bioactivity data"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA",
+                "CUSGWVK3I4TVHJH7NHPFAP2L"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Other"
+        ],
+        "compounds": [
+            {
+                "chem_acts": [
+                    "antiviral"
+                ],
+                "chem_struct": "C([C@@H]1C([C@@H]([C@@H](O1)C2=NNC(=C2O)C(=O)N)O)O)O",
+                "compound": "pyrazomycin",
+                "database_id": [
+                    "pubchem:136153629"
+                ],
+                "mol_mass": 259.080435,
+                "molecular_formula": "C9H13N3O6"
+            }
+        ],
+        "loci": {
+            "accession": "MN170532.1",
+            "completeness": "Unknown"
+        },
+        "mibig_accession": "BGC0001985",
+        "minimal": true,
+        "ncbi_tax_id": "67283",
+        "organism_name": "Streptomyces candidus",
+        "publications": [
+            "doi:10.1002/cbic.201900449"
+        ],
+        "status": "active"
+    }
+}

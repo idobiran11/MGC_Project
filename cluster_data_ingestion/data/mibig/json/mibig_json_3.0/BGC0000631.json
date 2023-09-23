@@ -1,0 +1,181 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Submitted"
+            ],
+            "contributors": [
+                "B753OXB6OWZ4PPBOOHPAMHHB"
+            ],
+            "version": "1.0"
+        },
+        {
+            "comments": [
+                "Migrated from v1.4",
+                "Updated compound(s) information (NPAtlas curation)"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "2.0"
+        },
+        {
+            "comments": [
+                "Corrected erroneous gene annotations",
+                "Changed gene identifiers to the first instance of a duplicated annotation"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Terpene"
+        ],
+        "compounds": [
+            {
+                "chem_acts": [
+                    "phytotoxic"
+                ],
+                "chem_struct": "[H][C@@]12[C@H](C[C@@H](C)[C@H](C=O)[C@]1(O)[C@](C)(CC2(C)C)C=O)OC(C)=O",
+                "compound": "botrydial",
+                "database_id": [
+                    "npatlas:NPA03924",
+                    "pubchem:185781"
+                ],
+                "mol_mass": 310.178023932,
+                "molecular_formula": "C17H26O5"
+            }
+        ],
+        "genes": {
+            "annotations": [
+                {
+                    "functions": [
+                        {
+                            "category": "Tailoring",
+                            "evidence": [
+                                "Knock-out"
+                            ]
+                        }
+                    ],
+                    "id": "ATZ56105.1",
+                    "name": "Bcbot4",
+                    "product": "Bcbot4",
+                    "tailoring": [
+                        "Monooxygenation"
+                    ]
+                },
+                {
+                    "functions": [
+                        {
+                            "category": "Tailoring",
+                            "evidence": [
+                                "Knock-out"
+                            ]
+                        }
+                    ],
+                    "id": "ATZ56106.1",
+                    "name": "Bcbot1",
+                    "product": "Bcbot1",
+                    "tailoring": [
+                        "Monooxygenation"
+                    ]
+                },
+                {
+                    "functions": [
+                        {
+                            "category": "Scaffold biosynthesis",
+                            "evidence": [
+                                "Knock-out"
+                            ]
+                        }
+                    ],
+                    "id": "ATZ56107.1",
+                    "name": "Bcbot2",
+                    "product": "Bcbot2"
+                },
+                {
+                    "functions": [
+                        {
+                            "category": "Tailoring",
+                            "evidence": [
+                                "Knock-out"
+                            ]
+                        }
+                    ],
+                    "id": "ATZ56108.1",
+                    "name": "Bcbot3",
+                    "product": "Bcbot3",
+                    "tailoring": [
+                        "Monooxygenation"
+                    ]
+                },
+                {
+                    "functions": [
+                        {
+                            "category": "Tailoring",
+                            "evidence": [
+                                "Sequence-based prediction"
+                            ]
+                        }
+                    ],
+                    "id": "ATZ56109.1",
+                    "name": "Bcbot5",
+                    "product": "Bcbot5",
+                    "tailoring": [
+                        "Acetylation"
+                    ]
+                },
+                {
+                    "functions": [
+                        {
+                            "category": "Regulation",
+                            "evidence": [
+                                "Knock-out"
+                            ]
+                        }
+                    ],
+                    "id": "ATZ56110.1",
+                    "name": "Bcbot6",
+                    "product": "Bcbot6"
+                },
+                {
+                    "functions": [
+                        {
+                            "category": "Tailoring",
+                            "evidence": [
+                                "Sequence-based prediction"
+                            ]
+                        }
+                    ],
+                    "id": "ATZ56112.1",
+                    "name": "Bcbot7",
+                    "product": "Bcbot7",
+                    "tailoring": [
+                        "Dehydration"
+                    ]
+                }
+            ]
+        },
+        "loci": {
+            "accession": "CP009816.1",
+            "completeness": "complete",
+            "end_coord": 2246000,
+            "evidence": [
+                "Knock-out studies"
+            ],
+            "start_coord": 2216500
+        },
+        "mibig_accession": "BGC0000631",
+        "minimal": false,
+        "ncbi_tax_id": "332648",
+        "organism_name": "Botrytis cinerea B05.10",
+        "publications": [
+            "pubmed:19035644",
+            "pubmed:15986930"
+        ],
+        "status": "active"
+    }
+}

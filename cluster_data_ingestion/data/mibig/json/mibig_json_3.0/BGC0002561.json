@@ -1,0 +1,48 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Entry added"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Alkaloid"
+        ],
+        "compounds": [
+            {
+                "compound": "phenazine SA"
+            },
+            {
+                "compound": "phenazine SB"
+            },
+            {
+                "chem_struct": "CC(C)=CCC/C(C)=C/COC1=CC=C(O)C2=NC3=CC=CC=C3N=C12",
+                "compound": "phenazine SC",
+                "database_id": [
+                    "npatlas:NPA027227",
+                    "pubchem:146683619"
+                ]
+            }
+        ],
+        "loci": {
+            "accession": "MH990330.1",
+            "completeness": "Unknown",
+            "end_coord": 22016,
+            "start_coord": 4070
+        },
+        "mibig_accession": "BGC0002561",
+        "minimal": true,
+        "ncbi_tax_id": "1931",
+        "organism_name": "Streptomyces sp.",
+        "publications": [
+            "pubmed:31262460"
+        ],
+        "status": "active"
+    }
+}

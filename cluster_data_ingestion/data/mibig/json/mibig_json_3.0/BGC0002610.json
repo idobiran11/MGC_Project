@@ -1,0 +1,38 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Entry added"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Terpene"
+        ],
+        "compounds": [
+            {
+                "chem_struct": "[H][C@]12CC[C@@]3(C/C=C(CC/C=C(CCC3[C@@]1(CCC2C(C)=C)C)\\C)\\[CH]O[O])C",
+                "compound": "stellatic acid"
+            }
+        ],
+        "loci": {
+            "accession": "LC073704.1",
+            "completeness": "Unknown",
+            "end_coord": 6568,
+            "start_coord": 101
+        },
+        "mibig_accession": "BGC0002610",
+        "minimal": true,
+        "ncbi_tax_id": "1549217",
+        "organism_name": "Aspergillus stellatus",
+        "publications": [
+            "pubmed:26351860"
+        ],
+        "status": "active"
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Entry added"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Polyketide"
+        ],
+        "compounds": [
+            {
+                "chem_struct": "C[C@@H]1[C@@]2([C@@H](O2)[C@](O1)(C)/C=C(\\C)/C=C(\\C)/[C@H]3[C@](O3)(C)C4=C(C(=C(C(=O)O4)C)OC)C)C",
+                "compound": "verrucosidin",
+                "database_id": [
+                    "pubchem:6437365"
+                ]
+            }
+        ],
+        "loci": {
+            "accession": "MDYM01000002.1",
+            "completeness": "Unknown",
+            "end_coord": 1263428,
+            "evidence": [
+                "Knock-out studies"
+            ],
+            "start_coord": 1232478
+        },
+        "mibig_accession": "BGC0002745",
+        "minimal": true,
+        "ncbi_tax_id": "60169",
+        "organism_name": "Penicillium polonicum",
+        "publications": [
+            "pubmed:34093475",
+            "doi:10.3389/fmicb.2021.660871"
+        ],
+        "status": "active"
+    }
+}

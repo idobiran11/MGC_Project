@@ -1,0 +1,112 @@
+{
+    "changelog": [
+        {
+            "comments": [
+                "Submitted"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "1.4"
+        },
+        {
+            "comments": [
+                "Migrated from v1.4",
+                "Updated reference publication(s) (MIBiG Annotathon)"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "2.0"
+        },
+        {
+            "comments": [
+                "Merged annotations from duplicate entry BGC0001914",
+                "Updated bioactivity data"
+            ],
+            "contributors": [
+                "AAAAAAAAAAAAAAAAAAAAAAAA"
+            ],
+            "version": "3.0"
+        }
+    ],
+    "cluster": {
+        "biosyn_class": [
+            "Alkaloid"
+        ],
+        "compounds": [
+            {
+                "compound": "benzastatin J"
+            },
+            {
+                "chem_acts": [
+                    "cytotoxic"
+                ],
+                "compound": "7-hydroxyl benzastatin B"
+            },
+            {
+                "chem_acts": [
+                    "cytotoxic"
+                ],
+                "compound": "7-hydroxyl O-demethylbenzastatin A"
+            },
+            {
+                "chem_acts": [
+                    "cytotoxic"
+                ],
+                "compound": "JBIR-67"
+            },
+            {
+                "chem_acts": [
+                    "cytotoxic"
+                ],
+                "compound": "7-hydroxyl benzastatin F"
+            },
+            {
+                "chem_acts": [
+                    "cytotoxic"
+                ],
+                "compound": "7-hydroxyl O-demethylbenzastatin D"
+            },
+            {
+                "chem_acts": [
+                    "cytotoxic"
+                ],
+                "compound": "O-demethylvirantmycin"
+            },
+            {
+                "chem_acts": [
+                    "cytotoxic"
+                ],
+                "compound": "7-hydroxyl benzastatin D"
+            },
+            {
+                "compound": "virantmycin"
+            },
+            {
+                "chem_acts": [
+                    "cytotoxic"
+                ],
+                "compound": "benzastatin K"
+            },
+            {
+                "chem_acts": [
+                    "cytotoxic"
+                ],
+                "compound": "methylbenzastatin K"
+            }
+        ],
+        "loci": {
+            "accession": "LC177364.1",
+            "completeness": "Unknown"
+        },
+        "mibig_accession": "BGC0001529",
+        "minimal": true,
+        "ncbi_tax_id": "1894972",
+        "organism_name": "Streptomyces sp. RI18",
+        "publications": [
+            "pubmed:29716187"
+        ],
+        "status": "active"
+    }
+}
