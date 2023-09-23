@@ -9,6 +9,9 @@ from Bio.KEGG.REST import kegg_find, kegg_get
 from dataclasses import dataclass
 from cluster_data_ingestion.excel_write_config import DirectoryData
 
+CURRENT_FILE_PATH = os.path.abspath(__file__)
+ROOT_DIR_PATH = os.path.dirname(os.path.dirname(CURRENT_FILE_PATH))
+
 logging.basicConfig(format=' %(asctime)s | %(levelname)s | %(message)s', level=logging.INFO)
 logger = logging.getLogger('uniprot')
 
@@ -28,7 +31,7 @@ class UniProtClustertoGene:
     def _read_cluster_gene_file(self):
         try:
             df = pd.read_excel(
-                f"../{DirectoryData.GENERAL_DATA_DIR}/{DirectoryData.PLANT_GENE_DATA_DIR}/{self.cluster_id}.xlsx")
+                f"{ROOT_DIR_PATH}/{DirectoryData.GENERAL_DATA_DIR}/{DirectoryData.PLANT_GENE_DATA_DIR}/{self.cluster_id}.xlsx")
             return df
         except Exception as e:
             logger.error(f"Failed reading cluster file on cluster: {self.cluster_id} with error: {e}")
@@ -64,7 +67,7 @@ class UniProtApiIngestion:
             logger.warning(f"Length of uniport results for gene {self.gene_id} is {results_len}")
         return results
 
-    def write_cross_references_files(self):
+    def write_cross_references_files(self, output_directory: str):
         for result in self.uniprot_results:
             cross_references_list = result.get("uniProtKBCrossReferences")
             database = []
@@ -74,10 +77,8 @@ class UniProtApiIngestion:
                 database.append(reference.get('database'))
                 id.append(reference.get('id'))
             df = pd.DataFrame({'database': database, 'id': id})
-            output_directory = f'../{DirectoryData.GENERAL_DATA_DIR}/{DirectoryData.PLANT_GENE_DATA_DIR}/{DirectoryData.UNIPROT_CROSS_REFERENCES}/{self.cluster_id}_uniprot_crossreference'
-            if not os.path.exists(output_directory):
-                os.makedirs(output_directory)
-            output_path = f'{output_directory}/{self.gene_id}_{entry_type}.xlsx'
+            file_name = f'{self.gene_id}_{entry_type}.xlsx'
+            output_path = f'{output_directory}/{file_name}'
             df.to_excel(output_path)
 
     def get_annotation_dict(self, go: bool = False, kegg: bool = False, panther: bool = False):
@@ -109,7 +110,7 @@ class KEGGIngestion:
     def __init__(self, id):
         self.id = id
 
-    def get_entry(self):
+    def get_kegg_entry(self):
         # return kegg_get(self.id, "aaseq")
         kegg_url = f"https://rest.kegg.jp/get/{self.id}"
         response = requests.get(kegg_url)
@@ -127,26 +128,87 @@ class KEGGIngestion:
         return pd.DataFrame(results, index=[self.id])
 
 
-def uniprot_handler(
-        plant_gene_data_path: str = f'../{DirectoryData.GENERAL_DATA_DIR}/{DirectoryData.PLANT_GENE_DATA_DIR}'):
-    file_paths = glob.glob(os.path.join(plant_gene_data_path, 'BGC*'))
+class CrossReferenceIterator:
+    def __init__(self,
+                 plant_gene_data_path: str = f'{ROOT_DIR_PATH}/{DirectoryData.GENERAL_DATA_DIR}/{DirectoryData.PLANT_GENE_DATA_DIR}',
+                 crossreference_directory: str = f"{ROOT_DIR_PATH}/{DirectoryData.GENERAL_DATA_DIR}/{DirectoryData.PLANT_GENE_DATA_DIR}/{DirectoryData.UNIPROT_CROSS_REFERENCES}",
+                 output_directory=f"{ROOT_DIR_PATH}/{DirectoryData.GENERAL_DATA_DIR}/{DirectoryData.PLANT_GENE_DATA_DIR}"):
+        self.plant_gene_data_path = plant_gene_data_path
+        self.crossreference_directories = glob.glob(os.path.join(crossreference_directory, 'BGC*'))
+        self.output_directory = output_directory
 
-    # Iterate over the list of file paths
-    for file_path in file_paths:
-        # Extract the file name (without the directory path)
-        file_name = os.path.basename(file_path)
+    def write_cross_reference_data(self):
+        file_paths = glob.glob(os.path.join(self.plant_gene_data_path, 'BGC*'))
 
-        # Split the file name based on the period ('.')
-        parts = file_name.split('.')
-        cluster_name = parts[0]
-        genes_in_cluster = UniProtClustertoGene(cluster_name).get_genes_in_cluster()
-        if genes_in_cluster:
-            for gene in genes_in_cluster:
-                ingestion = UniProtApiIngestion(gene_id=gene, cluster_id=cluster_name)
-                ingestion.write_cross_references_files()
-    logger.info("Finished Writing gene files crossreferences Successfully!")
+        # Iterate over the list of file paths
+        for file_path in file_paths:
+            # Extract the file name (without the directory path)
+            file_name = os.path.basename(file_path)
 
+            # Split the file name based on the period ('.')
+            parts = file_name.split('.')
+            cluster_name = parts[0]
+            output_directory = f'{ROOT_DIR_PATH}/{DirectoryData.GENERAL_DATA_DIR}/{DirectoryData.PLANT_GENE_DATA_DIR}/{DirectoryData.UNIPROT_CROSS_REFERENCES}/{cluster_name}_uniprot_crossreference'
+            if os.path.exists(output_directory):
+                logger.warning(f"Exists Directory {output_directory}, skipping creation")
+            else:
+                os.makedirs(output_directory)
+                genes_in_cluster = UniProtClustertoGene(cluster_name).get_genes_in_cluster()
+                if genes_in_cluster:
+                    for gene in genes_in_cluster:
+                        ingestion = UniProtApiIngestion(gene_id=gene, cluster_id=cluster_name)
+                        ingestion.write_cross_references_files(output_directory)
+            logger.info("Finished Writing gene files crossreferences Successfully!")
+
+    def get_kegg_data(self):
+        kegg_final_df = pd.DataFrame()
+        for dir in self.crossreference_directories:
+            ref_files = glob.glob(os.path.join(dir, '*.xlsx'))
+            if len(ref_files) == 0:
+                logger.info(
+                    f"Directory {dir} has no crossreference files, probably uses hypothetical genes in gene files")
+            else:
+                cluster_ref = ref_files[0].split('/')[-2].split('_')
+                cluster_name = cluster_ref[0]
+                files_with_kegg = {}
+                for file in ref_files:
+
+                    df = pd.read_excel(file)
+                    kegg_files = (find_kegg_ids(df))
+                    if not kegg_files:
+                        continue
+                    file_type = file.split('/')[-1].split('.')[0]
+                    if file_type not in files_with_kegg:
+                        files_with_kegg[file_type] = kegg_files
+                    else:
+                        files_with_kegg[file_type].extend(kegg_files)
+                for file_type, value in files_with_kegg.items():
+                    for id in files_with_kegg[file_type]:
+                        kegg_df = KEGGIngestion(id).get_kegg_entry()
+                        kegg_df.insert(0, 'cluster_name', cluster_name)
+                        kegg_df.insert(1, 'reference_name', file_type)
+                        kegg_final_df = pd.concat([kegg_final_df, kegg_df])
+        logger.info("Succesfully Created KEGG dataframe")
+        return kegg_final_df
+
+
+def uniprot_plant_handler(
+        plant_gene_data_path: str = f'{ROOT_DIR_PATH}/{DirectoryData.GENERAL_DATA_DIR}/{DirectoryData.PLANT_GENE_DATA_DIR}',
+        crossreference_directory: str = f"{ROOT_DIR_PATH}/{DirectoryData.GENERAL_DATA_DIR}/{DirectoryData.PLANT_GENE_DATA_DIR}/{DirectoryData.UNIPROT_CROSS_REFERENCES}",
+        output_directory=f"{ROOT_DIR_PATH}/{DirectoryData.GENERAL_DATA_DIR}/{DirectoryData.PLANT_GENE_DATA_DIR}"):
+    cross_ref_iterator = CrossReferenceIterator(plant_gene_data_path, crossreference_directory, output_directory)
+    cross_ref_iterator.write_cross_reference_data()
+    kegg_df = cross_ref_iterator.get_kegg_data()
+    kegg_df.to_excel(f"{output_directory}/{DirectoryData.KEGG_DATA}/KEGG_data.xlsx")
+
+
+def find_kegg_ids(df: pd.DataFrame) -> list:
+    df = df[df['database'] == "KEGG"]
+    if not df.empty:
+        return df["id"].to_list()
+    else:
+        return None
 
 
 if __name__ == "__main__":
-    uniprot_handler()
+    uniprot_plant_handler()
