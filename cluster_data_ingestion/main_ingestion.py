@@ -4,6 +4,7 @@ from gene_files_writer import GeneCompoundFilesWriter
 from scraper_config import DirectoryType, KingdomNames
 from excel_write_config import IODataTypes, DirectoryData
 import logging
+from uniprot_ingestion import UniProtApiIngestion, KEGGIngestion, GeneDBNames
 
 logging.basicConfig(format=' %(asctime)s | %(levelname)s | %(message)s', level=logging.INFO)
 
@@ -18,6 +19,12 @@ def handler(kingdom: str):
                            excel_name=DirectoryData.PLANT_CLUSTER_EXCEL).handle_data_from_directory(
             file_type=IODataTypes.GENBANK)
         GeneCompoundFilesWriter(kingdom="plants").write_gene_and_compounds_files()
+        ingestion = UniProtApiIngestion(gene_id='AT5G42600')
+        annotation_dict = ingestion._get_annotation_dict(kegg=True)
+        kegg_ids = [annotation_dict.get(GeneDBNames.KEGG)[i]['id'] for i in
+                    range(len(annotation_dict.get(GeneDBNames.KEGG)))]
+        for id in kegg_ids:
+            entry = KEGGIngestion(id).get_entry()
 
     elif kingdom == "fungi":
         mibig_scraper = DataScraper(kingdom=KingdomNames.FUNGI, export_location=DirectoryType.LOCAL,

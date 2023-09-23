@@ -19,6 +19,7 @@ class DirectoryData:
     FUNGI_GENE_DATA_DIR = "fungi_gene_data"
     PLANT_COMPOUND_DATA_DIR = "plant_compound_data"
     FUNGI_COMPOUND_DATA_DIR = "fungi_compound_data"
+    UNIPROT_CROSS_REFERENCES = "uniprot_crossreferences"
 
 
 @dataclass(frozen=True)

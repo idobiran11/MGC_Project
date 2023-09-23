@@ -41,9 +41,9 @@ class DataScraper:
         experimental option: uses browser open even if completed
         :return:
         """
-        self.options = Options()
+        self.options = webdriver.ChromeOptions()
         self.options.add_experimental_option("detach", True)
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=self.options)
+        self.driver = webdriver.Chrome(service=Service(), options=self.options)
         self.driver.implicitly_wait(10)
 
     def _mibig_run_query(self):

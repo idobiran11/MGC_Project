@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "mgc-project"
+version = "0.1.0"
+description = "Project to create a Metabolic Gene Cluster Identification ML Algorithm"
+authors = ["idobiran11 <ido.b@proteantecs.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+selenium = "4.10.0"
+biopython = "1.81"
+webdriver-manager = "3.8.6"
+pandas = "2.0.1"
+openpyxl = "3.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
