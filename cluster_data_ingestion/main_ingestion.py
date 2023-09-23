@@ -18,6 +18,7 @@ def handler(kingdom: str):
         ClusterExcelWriter(bgc_list=bgc_list, scraper_dict=scraper_dict,
                            excel_name=DirectoryData.PLANT_CLUSTER_EXCEL).handle_data_from_directory(
             file_type=IODataTypes.GENBANK)
+        GeneCompoundFilesWriter(kingdom="plants").write_gene_and_compounds_files()
         uniprot_plant_handler()
 
     elif kingdom == "fungi":

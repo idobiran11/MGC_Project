@@ -4,7 +4,8 @@ from Bio import SeqIO
 from cluster_data_ingestion.excel_write_config import IODataTypes, DirectoryData
 import json
 import logging
-
+logging.basicConfig(format=' %(asctime)s | %(levelname)s | %(message)s', level=logging.INFO)
+logger = logging.getLogger('excel_writer')
 
 class ClusterExcelWriter:
 
@@ -79,6 +80,9 @@ class ClusterExcelWriter:
         suffix = self.excel_name
         filepath = os.path.join(directory, suffix)
         self.df.reset_index(drop=True, inplace=True)
+        if not os.path.exists(directory):
+            logger.info(f"{directory} doesnt exist. Creating.")
+            os.makedirs(directory)
         self.df.to_excel(filepath, index=True)
 
     @staticmethod

@@ -158,7 +158,7 @@ class CrossReferenceIterator:
                     for gene in genes_in_cluster:
                         ingestion = UniProtApiIngestion(gene_id=gene, cluster_id=cluster_name)
                         ingestion.write_cross_references_files(output_directory)
-            logger.info("Finished Writing gene files crossreferences Successfully!")
+            logger.info(f"Finished Writing gene files crossreferences for file path {file_paths} Successfully!")
 
     def get_kegg_data(self):
         kegg_final_df = pd.DataFrame()
@@ -199,7 +199,12 @@ def uniprot_plant_handler(
     cross_ref_iterator = CrossReferenceIterator(plant_gene_data_path, crossreference_directory, output_directory)
     cross_ref_iterator.write_cross_reference_data()
     kegg_df = cross_ref_iterator.get_kegg_data()
-    kegg_df.to_excel(f"{output_directory}/{DirectoryData.KEGG_DATA}/KEGG_data.xlsx")
+    kegg_dir = f"{output_directory}/{DirectoryData.KEGG_DATA}"
+    if not os.path.exists(kegg_dir):
+        logger.info(f"{kegg_dir} doesnt exist. Creating.")
+        os.makedirs(kegg_dir)
+    kegg_df.to_excel(f"{kegg_dir}/KEGG_data.xlsx")
+    x=4
 
 
 def find_kegg_ids(df: pd.DataFrame) -> list:
