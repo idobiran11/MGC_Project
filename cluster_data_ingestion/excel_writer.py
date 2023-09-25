@@ -63,7 +63,7 @@ class ClusterExcelWriter:
                       'cluster_start': start,
                       'cluster_end': end,
                       'num_of_coding_sequences': self._find_num_of_genes(seq_record),
-                      'bionsythetic_class': cluster_scraped_dict['bionsythetic_class'],
+                      'biosynthetic_class': cluster_scraped_dict['biosynthetic_class'],
                       'description': seq_record.description,
                       'main_product': cluster_scraped_dict['main_product'],
                       'mibig_version': mibig_version,

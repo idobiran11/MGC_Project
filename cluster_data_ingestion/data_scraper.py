@@ -101,7 +101,7 @@ class DataScraper:
             cluster_id = split_row[0].split(' ')[0]
             self.output_dict[cluster_id] = dict()
             self.output_dict[cluster_id]['main_product'] = self._get_clean_main_product_list(split_row[0].split(' ')[1:])
-            self.output_dict[cluster_id]['bionsythetic_class'] = split_row[1]
+            self.output_dict[cluster_id]['biosynthetic_class'] = split_row[1]
             self.output_dict[cluster_id]['organism'] = split_row[2]
 
     @staticmethod

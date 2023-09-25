@@ -9,7 +9,7 @@ from uniprot_ingestion import UniProtApiIngestion, KEGGIngestion, GeneDBNames, u
 logging.basicConfig(format=' %(asctime)s | %(levelname)s | %(message)s', level=logging.INFO)
 
 
-def handler(kingdom: str):
+def handler(kingdom: str = "plants"):
     if kingdom == "plants":
         mibig_scraper = DataScraper(kingdom=KingdomNames.PLANT, export_location=DirectoryType.LOCAL,
                                     get_gene_data=False)
@@ -36,4 +36,4 @@ def handler(kingdom: str):
 
 
 if __name__ == "__main__":
-    handler("plants")
+    handler()
